@@ -14,14 +14,16 @@ public class MainApp {
 	public static void main(String[] args) {
 		System.out.println("Programa para la gestión de reservas de espacios del IES Al-Ándalus");
 
+		// Menú que te pide un entero para que elijas guardar los datos en memoria o en
+		// ficheros, según la opción se crea el tipo de modelo adecuado
 		int opcion;
 		do {
 			System.out.println("Elige el tipo de almacenamiento de datos:\n 1. MEMORIA\n 2. FICHEROS");
 			opcion = Entrada.entero();
-			if(opcion != 1 && opcion != 2) {
+			if (opcion != 1 && opcion != 2) {
 				System.out.println("ERROR: Opción no válida.\n");
 			}
-			
+
 		} while (opcion != 1 && opcion != 2);
 
 		IModelo modelo;
@@ -34,7 +36,7 @@ public class MainApp {
 
 		// IModelo modelo = new Modelo();
 		// IModelo modelo = new Modelo(FactoriaFuenteDatos.MEMORIA.crear());
-//		IModelo modelo = new Modelo(FactoriaFuenteDatos.FICHEROS.crear());
+		// IModelo modelo = new Modelo(FactoriaFuenteDatos.FICHEROS.crear());
 		IVista vista = new Vista();
 		try {
 			IControlador controlador = new Controlador(modelo, vista);
